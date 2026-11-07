@@ -1,4 +1,4 @@
-import { LinkedInLink } from "../components/LinkedInLink";
+import { ProfileCard } from "../components/ProfileCard";
 import { MemberPhoto } from "../components/MemberPhoto";
 import { PageHeader, RosterUnavailable, Skeleton } from "../components/ui";
 import { site } from "../config";
@@ -59,39 +59,42 @@ export function Alumni() {
 
 function AlumniCard({ member }: { member: Member }) {
   return (
-    <article className="flex h-full items-start gap-5 rounded border border-gray-200 p-6 shadow-sm transition hover:border-gold hover:shadow-md">
-      <MemberPhoto
-        name={member.name}
-        photoUrl={member.photoUrl}
-        className="h-24 w-24 shrink-0 rounded-full sm:h-28 sm:w-28"
-        initialsClassName="text-xl"
-      />
-      <div className="min-w-0 flex-1">
-        <div className="mb-2 flex items-start justify-between gap-3">
-          <h3 className="text-xl font-bold text-navy">{member.name}</h3>
-          <LinkedInLink url={member.linkedinUrl} name={member.name} className="text-navy" />
-        </div>
-        {member.position && <p className="mb-1 font-semibold text-gray-700">{member.position}</p>}
-        {member.company && <p className="mb-3 font-medium text-gray-600">{member.company}</p>}
-        {member.major && (
-          <p className="text-sm text-gray-700">
-            <span className="text-gray-500">Major:</span> {member.major}
-          </p>
-        )}
-        {member.minor && (
-          <p className="text-sm text-gray-700">
-            <span className="text-gray-500">Minor:</span> {member.minor}
-          </p>
-        )}
-        <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium">
-          {member.industry && <span className="rounded bg-navy px-3 py-1 text-white">{member.industry}</span>}
-          {member.classYear && (
-            <span className="rounded border border-gray-300 bg-cream px-3 py-1 text-gray-600">
-              Class of {member.classYear}
-            </span>
+    <ProfileCard
+      name={member.name}
+      linkedinUrl={member.linkedinUrl}
+      className="h-full overflow-hidden rounded border border-gray-200 shadow-sm transition hover:border-gold hover:shadow-md"
+    >
+      <div className="flex items-start gap-5 p-6 pr-12">
+        <MemberPhoto
+          name={member.name}
+          photoUrl={member.photoUrl}
+          className="h-24 w-24 shrink-0 rounded-full sm:h-28 sm:w-28"
+          initialsClassName="text-xl"
+        />
+        <div className="min-w-0 flex-1">
+          <h3 className="mb-2 text-xl font-bold text-navy">{member.name}</h3>
+          {member.position && <p className="mb-1 font-semibold text-gray-700">{member.position}</p>}
+          {member.company && <p className="mb-3 font-medium text-gray-600">{member.company}</p>}
+          {member.major && (
+            <p className="text-sm text-gray-700">
+              <span className="text-gray-500">Major:</span> {member.major}
+            </p>
           )}
+          {member.minor && (
+            <p className="text-sm text-gray-700">
+              <span className="text-gray-500">Minor:</span> {member.minor}
+            </p>
+          )}
+          <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium">
+            {member.industry && <span className="rounded bg-navy px-3 py-1 text-white">{member.industry}</span>}
+            {member.classYear && (
+              <span className="rounded border border-gray-300 bg-cream px-3 py-1 text-gray-600">
+                Class of {member.classYear}
+              </span>
+            )}
+          </div>
         </div>
       </div>
-    </article>
+    </ProfileCard>
   );
 }

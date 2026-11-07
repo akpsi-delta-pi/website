@@ -1,4 +1,4 @@
-import { LinkedInLink } from "../components/LinkedInLink";
+import { ProfileCard } from "../components/ProfileCard";
 import { MemberPhoto } from "../components/MemberPhoto";
 import { PageHeader, RosterUnavailable, SectionHeading, Skeleton } from "../components/ui";
 import type { Member } from "../members/members";
@@ -109,41 +109,50 @@ function PresidentialWelcome({ presidentName, loading }: { presidentName?: strin
 
 function PresidentCard({ member }: { member: Member }) {
   return (
-    <article className="overflow-hidden rounded border-2 border-gold shadow-lg">
+    <ProfileCard
+      name={member.name}
+      linkedinUrl={member.linkedinUrl}
+      className="overflow-hidden rounded border-2 border-gold shadow-lg"
+    >
       <MemberPhoto name={member.name} photoUrl={member.photoUrl} className="aspect-[3/4]" initialsClassName="text-6xl" />
       <div className="bg-navy p-8 text-white">
         <h3 className="mb-2 text-2xl font-bold">{member.name}</h3>
-        <p className="mb-4 text-lg font-semibold text-gold">{member.role}</p>
-        <LinkedInLink url={member.linkedinUrl} name={member.name} label="Connect on LinkedIn" />
+        <p className="text-lg font-semibold text-gold">{member.role}</p>
       </div>
-    </article>
+    </ProfileCard>
   );
 }
 
 function OfficerCard({ member }: { member: Member }) {
   return (
-    <article className="h-full overflow-hidden rounded border border-gray-200 shadow-sm transition-shadow hover:shadow-lg">
+    <ProfileCard
+      name={member.name}
+      linkedinUrl={member.linkedinUrl}
+      className="h-full overflow-hidden rounded border border-gray-200 shadow-sm transition-shadow hover:shadow-lg"
+    >
       <MemberPhoto name={member.name} photoUrl={member.photoUrl} className="aspect-[3/4]" initialsClassName="text-5xl" />
       <div className="p-5">
         <h3 className="mb-1 text-lg font-bold text-navy">{member.name}</h3>
-        <p className="mb-3 text-sm font-semibold text-gold">{member.role}</p>
-        <LinkedInLink url={member.linkedinUrl} name={member.name} label="LinkedIn" className="text-navy" />
+        <p className="text-sm font-semibold text-gold">{member.role}</p>
       </div>
-    </article>
+    </ProfileCard>
   );
 }
 
 function BrotherCard({ member }: { member: Member }) {
   return (
-    <article className="h-full overflow-hidden rounded border border-gray-200 text-center shadow-sm transition hover:border-gold hover:shadow-md">
+    <ProfileCard
+      name={member.name}
+      linkedinUrl={member.linkedinUrl}
+      className="h-full overflow-hidden rounded border border-gray-200 text-center shadow-sm transition hover:border-gold hover:shadow-md"
+    >
       <MemberPhoto name={member.name} photoUrl={member.photoUrl} className="aspect-square" />
       <div className="p-4">
         <h3 className="mb-1 font-semibold text-navy">{member.name}</h3>
         {member.classYear && <p className="mb-2 text-sm text-gray-600">Class of {member.classYear}</p>}
         {member.major && <p className="text-xs font-medium text-gray-700">{member.major}</p>}
         {member.minor && <p className="text-xs text-gray-500">Minor: {member.minor}</p>}
-        <LinkedInLink url={member.linkedinUrl} name={member.name} className="mt-3 text-navy" />
       </div>
-    </article>
+    </ProfileCard>
   );
 }
