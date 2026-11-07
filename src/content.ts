@@ -83,4 +83,35 @@ export const resources: Resource[] = [
     title: "Salary Negotiation Guide",
     description: "How to evaluate and negotiate a job offer.",
   },
+]; 
+
+
+export type Benefit = {
+  title: string;
+  text: string;
+  /** Optional photo in public/benefits/, e.g. "benefits/community.jpg". Without one, an icon shows. */
+  image?: string;
+};
+
+export const benefits: Benefit[] = [
+  {
+    title: "Community",
+    text: "The people you meet in Alpha Kappa Psi become your closest friends, study partners and biggest supporters, long after graduation.",
+    image: "benefits/community.jpg",
+  },
+  {
+    title: "Leadership",
+    text: "From running events to leading committees and the executive board, there are real chances to lead from your very first semester.",
+    image: "benefits/leadership.jpg",
+  },
+  {
+    title: "Network",
+    text: "Join one of the largest professional networks of its kind, with brothers and alumni across industries and companies nationwide.",
+    image: "benefits/network.jpg",
+  },
+  {
+    title: "Development",
+    text: "Resume reviews, interview prep, workshops and mentorship help you grow as a student, a professional and a person.",
+    image: "benefits/development.jpg",
+  },
 ];
