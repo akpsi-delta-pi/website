@@ -1,0 +1,32 @@
+{
+  "name": "akpsi-delta-pi-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Website for the Delta Pi chapter of Alpha Kappa Psi at Creighton University",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "lucide-react": "0.487.0",
+    "papaparse": "5.5.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router": "7.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.18",
+    "@types/papaparse": "5.5.2",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "4.7.0",
+    "tailwindcss": "4.1.18",
+    "typescript": "5.9.3",
+    "vite": "6.4.5"
+  }
+}
