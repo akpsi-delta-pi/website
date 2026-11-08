@@ -1,7 +1,7 @@
 # Alpha Kappa Psi – Delta Pi Chapter Website
 
 The website for the Delta Pi chapter of Alpha Kappa Psi at Creighton University.
-Built with React, TypeScript and Tailwind CSS, and hosted for free on GitHub Pages.
+Built with React, TypeScript and Tailwind CSS, and hosted for free on GitHub Pages (for now until testing; will be changed to a new domain once purchased)
 
 ## Updating the site (no coding needed)
 
