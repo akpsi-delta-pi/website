@@ -40,3 +40,11 @@ export const EXEC_ROLES = [
   "Vice President of Alumni and External Relations",
   "Vice President of Rituals and Recruitment",
 ];
+
+/**
+ * Active members move to the Alumni page automatically once their class graduates:
+ * on the 1st of this month (1 = January … 12 = December) in their ClassYear.
+ * With 6, the Class of 2027 shows as alumni from June 1, 2027.
+ * To keep someone active longer, or move them early, change their ClassYear or Status in the roster.
+ */
+export const GRADUATION_MONTH = 6;
