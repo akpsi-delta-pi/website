@@ -1,6 +1,7 @@
 import { Calendar, Clock, MapPin, Megaphone, Target, Users } from "lucide-react";
 import { rushEvents } from "../content";
 import { site } from "../config";
+import { PhotoStrip } from "../components/PhotoStrip";
 
 const reasons = [
   {
@@ -42,6 +43,8 @@ export function Rush() {
             ))}
           </ul>
         </section>
+
+        <PhotoStrip />
 
         <section className="mb-16">
           <h2 className="mb-10 text-center font-serif text-4xl font-bold text-white">Rush Schedule</h2>
