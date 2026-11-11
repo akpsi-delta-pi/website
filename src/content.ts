@@ -115,3 +115,37 @@ export const benefits: Benefit[] = [
     image: "benefits/development.jpg",
   },
 ];
+
+export type PhotoTile = {
+  title: string;
+  text: string;
+  /** The page the tile opens. */
+  to: string;
+  /** A photo in public/tiles/, e.g. "tiles/brothers.jpg". Leave as "" until you have one. */
+  image: string;
+};
+
+/**
+ * The two big photo tiles on the home page. Each tile's photo also appears
+ * at the top of the page it opens.
+ */
+export const photoTiles: PhotoTile[] = [
+  {
+    title: "Brothers",
+    text: "Meet our executive board and active brothers",
+    to: "/members",
+    image: "",
+  },
+  {
+    title: "Alumni",
+    text: "See where our alumni are making an impact",
+    to: "/alumni",
+    image: "",
+  },
+];
+
+/** The photo URL for the tile that opens a given page, or "" if it has none. */
+export function tileImage(page: string): string {
+  const image = photoTiles.find((tile) => tile.to === page)?.image ?? "";
+  return image ? `${import.meta.env.BASE_URL}${image.replace(/^\/+/, "")}` : "";
+}
