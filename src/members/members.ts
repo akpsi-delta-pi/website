@@ -1,4 +1,4 @@
-import { EXEC_ROLES, PRESIDENT_ROLE } from "../config";
+import { EXEC_ROLES, GRADUATION_MONTH, PRESIDENT_ROLE } from "../config";
 
 export type MemberStatus = "active" | "alumni";
 
@@ -92,13 +92,22 @@ export function safePhotoUrl(value: string): string {
   return "";
 }
 
+/** True once the 1st of GRADUATION_MONTH in the member's class year has arrived. */
+export function hasGraduated(classYear: string, today: Date): boolean {
+  const year = Number.parseInt(classYear, 10);
+  if (!Number.isFinite(year)) return false;
+  return today >= new Date(year, GRADUATION_MONTH - 1, 1);
+}
+
 /** Convert parsed CSV rows into members, skipping rows without a name or a valid status. */
-export function rowsToMembers(rows: Row[]): Member[] {
+export function rowsToMembers(rows: Row[], today: Date = new Date()): Member[] {
   const members: Member[] = [];
   rows.forEach((row, index) => {
     const name = field(row, "Name");
-    const status = parseStatus(field(row, "Status"));
+    let status = parseStatus(field(row, "Status"));
     if (!name || !status) return;
+    // Graduated actives show as alumni automatically.
+    if (status === "active" && hasGraduated(field(row, "ClassYear"), today)) status = "alumni";
     members.push({
       id: `${index}-${name}`,
       name,
