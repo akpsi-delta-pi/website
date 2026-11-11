@@ -3,6 +3,7 @@ import { MemberPhoto } from "../components/MemberPhoto";
 import { PageHeader, RosterUnavailable, SectionHeading, Skeleton } from "../components/ui";
 import type { Member } from "../members/members";
 import { useRoster } from "../members/useMembers";
+import { tileImage } from "../content";
 
 export function Brothers() {
   const state = useRoster();
@@ -10,6 +11,7 @@ export function Brothers() {
   return (
     <main className="mx-auto max-w-7xl px-6 pb-16 pt-28">
       <PageHeader
+        image={tileImage("/members")}
         title="Our Brotherhood"
         intro="Meet the leaders and active members who make our chapter what it is."
       />

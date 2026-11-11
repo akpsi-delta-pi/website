@@ -1,11 +1,12 @@
 import type { ReactNode } from "react";
 
 /** Large centered title used at the top of each inner page. */
-export function PageHeader({ title, intro }: { title: string; intro?: string }) {
+export function PageHeader({ title, intro, image }: { title: string; intro?: string; image?: string }) {
   return (
     <header className="mb-16 text-center">
       <h1 className="mb-4 font-serif text-5xl font-bold text-navy">{title}</h1>
       {intro && <p className="mx-auto max-w-3xl text-lg text-gray-600">{intro}</p>}
+      {image && <img src={image} alt="" className="mt-10 h-56 w-full rounded object-cover shadow-lg md:h-80" />}
     </header>
   );
 }

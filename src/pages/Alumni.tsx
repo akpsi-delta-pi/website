@@ -4,6 +4,7 @@ import { PageHeader, RosterUnavailable, Skeleton } from "../components/ui";
 import { site } from "../config";
 import type { Member } from "../members/members";
 import { useRoster } from "../members/useMembers";
+import { tileImage } from "../content";
 
 const contactUrl = site.contactEmail ? `mailto:${site.contactEmail}` : site.instagramUrl;
 
@@ -13,6 +14,7 @@ export function Alumni() {
   return (
     <main className="mx-auto max-w-7xl px-6 pb-16 pt-28">
       <PageHeader
+        image={tileImage("/alumni")}
         title="Our Alumni"
         intro="Our alumni carry what they learned in Alpha Kappa Psi into companies and industries across the country."
       />
