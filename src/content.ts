@@ -149,3 +149,16 @@ export function tileImage(page: string): string {
   const image = photoTiles.find((tile) => tile.to === page)?.image ?? "";
   return image ? `${import.meta.env.BASE_URL}${image.replace(/^\/+/, "")}` : "";
 }
+
+export type GalleryPhoto = {
+  /** A photo in public/gallery/, e.g. "gallery/rush-night.jpg". */
+  src: string;
+  /** A short description for screen readers, e.g. "Brothers at fall rush". */
+  alt: string;
+};
+
+/** Photos for the scrolling strip on the Rush page. With none listed, the strip is hidden. */
+export const galleryPhotos: GalleryPhoto[] = [];
+
+/** Shown under the photo strip. Leave as "" to hide it. */
+export const galleryCredit = "Photos by Hiba Armaghan";
