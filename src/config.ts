@@ -48,3 +48,12 @@ export const EXEC_ROLES = [
  * To keep someone active longer, or move them early, change their ClassYear or Status in the roster.
  */
 export const GRADUATION_MONTH = 6;
+
+/**
+ * Where the sponsor list comes from.
+ * - "sponsors.csv" reads public/sponsors.csv from this project.
+ * - For a Google Sheet, paste its "Publish to web" CSV link instead
+ *   (it starts with https://docs.google.com/spreadsheets/). Columns: Name, Tier, Order, Logo, Website.
+ *   Sheet edits then show on the site within about 5 minutes, with no code change or deploy.
+ */
+export const SPONSORS_CSV_URL = "sponsors.csv";

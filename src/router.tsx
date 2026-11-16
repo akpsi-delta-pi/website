@@ -5,6 +5,7 @@ import { Brothers } from "./pages/Brothers";
 import { Alumni } from "./pages/Alumni";
 import { Rush } from "./pages/Rush";
 import { Resources } from "./pages/Resources";
+import { Sponsors } from "./pages/Sponsors";
 import { NotFound } from "./pages/NotFound";
 
 export const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export const router = createBrowserRouter(
         { path: "alumni", element: <Alumni /> },
         { path: "rush", element: <Rush /> },
         { path: "resources", element: <Resources /> },
+        { path: "sponsors", element: <Sponsors /> },
         { path: "*", element: <NotFound /> },
       ],
     },
