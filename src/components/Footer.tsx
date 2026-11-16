@@ -7,6 +7,7 @@ const quickLinks = [
   { label: "Brothers", to: "/members" },
   { label: "Rush", to: "/rush" },
   { label: "Alumni", to: "/alumni" },
+  { label: "Sponsors", to: "/sponsors" },
 ];
 
 const socials = [

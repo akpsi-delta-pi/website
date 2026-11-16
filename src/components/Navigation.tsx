@@ -9,6 +9,7 @@ const links = [
   { label: "Rush", to: "/rush" },
   { label: "Resources", to: "/resources" },
   { label: "Alumni", to: "/alumni" },
+  { label: "Sponsors", to: "/sponsors" },
 ];
 
 const linkClass = (to: string) =>
